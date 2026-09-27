@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Siddhaanth Iyer — VLSI &amp; ASIC Engineer</title>
-<meta name="description" content="Siddhaanth Satish Iyer — MS EE at NC State. VLSI design &amp; verification: RTL to GDS, formal verification, and open-source silicon tape-outs.">
+<title>Siddhaanth Iyer &mdash; VLSI &amp; ASIC Engineer</title>
+<meta name="description" content="Siddhaanth Satish Iyer — MS CE at NC State. VLSI design &amp; verification: RTL to GDS, formal verification, and open-source silicon tape-outs.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -187,6 +187,8 @@
   .card p{color:var(--text-muted);margin:8px 0 0;font-size:15px}
   .pills{display:flex;flex-wrap:wrap;gap:7px;margin-top:16px}
   .pill{font-family:var(--font-mono);font-size:11px;color:var(--text-muted);border:1px solid var(--border);border-radius:6px;padding:3px 8px;background:var(--bg-2)}
+  .card-link{display:inline-block;margin-top:16px;font-family:var(--font-mono);font-size:12px;color:var(--cat,var(--teal));border-bottom:1px solid transparent;transition:border-color .15s}
+  .card-link:hover{border-color:var(--cat,var(--teal))}
   .grid3{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
   .ghlink{display:inline-flex;align-items:center;gap:8px;margin-top:26px;font-family:var(--font-mono);font-size:13px;color:var(--teal);border-bottom:1px solid transparent;transition:border-color .15s}
   .ghlink:hover{border-color:var(--teal)}
@@ -289,7 +291,7 @@
         <a class="btn primary" href="#work">View work</a>
         <a class="btn" href="./resume.pdf">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15h6M9 18h6"/></svg>
-          Résumé
+          R&eacute;sum&eacute;
         </a>
         <a class="btn" href="https://github.com/spacebiz24" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.5A10.5 10.5 0 0 0 8.7 22c.5.1.7-.2.7-.5v-1.8c-2.9.6-3.5-1.4-3.5-1.4-.5-1.2-1.2-1.5-1.2-1.5-.9-.6.1-.6.1-.6 1 .1 1.6 1 1.6 1 .9 1.6 2.5 1.1 3.1.9.1-.7.4-1.1.6-1.4-2.3-.3-4.7-1.2-4.7-5.1 0-1.1.4-2 1-2.8-.1-.3-.5-1.3.1-2.7 0 0 .9-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .6 1.4.2 2.4.1 2.7.6.8 1 1.7 1 2.8 0 3.9-2.4 4.8-4.7 5.1.4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5A10.5 10.5 0 0 0 12 1.5z"/></svg>
@@ -340,56 +342,9 @@
 <section id="work">
   <div class="wrap">
     <div class="sec-head"><span class="sec-idx">01</span><h2>Selected work</h2><span class="rule"></span></div>
-
-    <div class="feat">
-      <article class="card">
-        <div class="cat">SILICON / TAPE-OUT</div>
-        <h3>ButterFold &mdash; baseband transform engine</h3>
-        <p>A minimum-area OFDM / DFT-s-OFDM transform core that folds a 12-point DFT and a 128-point FFT/IFFT onto one shared mixed-radix datapath. Hardened RTL-to-GDS on GlobalFoundries GF180MCU for the IEEE SSCS TC-OSE Chipathon (team D03).</p>
-        <div class="pills">
-          <span class="pill">GF180 180nm</span><span class="pill">LibreLane / OpenROAD</span><span class="pill">1.3 &times; 1.0 mm die</span><span class="pill">LVS/XOR clean</span>
-        </div>
-      </article>
-
-      <article class="card violet">
-        <div class="cat">SILICON / TAPE-OUT</div>
-        <h3>Wayfinder &mdash; AHRS coprocessor</h3>
-        <p>A CORDIC + Kalman attitude coprocessor for TinyTapeout: one shift-add iterator shared across circular/linear CORDIC and Kalman microcode, with no hardware multiplier or reciprocal ROM. Turns gyro/accel/mag streams into roll, pitch, and yaw.</p>
-        <div class="pills">
-          <span class="pill">IHP SG13G2 130nm</span><span class="pill">Q1.15 fixed-point</span><span class="pill">1&times;2 tile</span><span class="pill">Python golden model</span>
-        </div>
-      </article>
-    </div>
-
-    <div class="grid3">
-      <article class="card small faint">
-        <div class="cat">ARCHITECTURE / RTL</div>
-        <h3>Pipelined CNN accelerator</h3>
-        <p>A pipelined 4&times;4-kernel convolution engine in SystemVerilog over 1024&times;1024 inputs, timing-closed at a 7&nbsp;ns clock and sustaining one pixel per cycle.</p>
-        <div class="pills"><span class="pill">SystemVerilog</span><span class="pill">7 ns closure</span><span class="pill">45nm &middot; 35k cells</span></div>
-      </article>
-
-      <article class="card small violet">
-        <div class="cat">VERIFICATION</div>
-        <h3>I2C &rarr; Wishbone UVM env</h3>
-        <p>A layered UVM testbench &mdash; driver, monitor, scoreboard, and SVA checkers &mdash; covering every I2C transaction type and Wishbone bus operation with functional coverage.</p>
-        <div class="pills"><span class="pill">UVM</span><span class="pill">SVA</span><span class="pill">functional coverage</span></div>
-      </article>
-
-      <article class="card small gold">
-        <div class="cat">HARDWARE SECURITY</div>
-        <h3>DPA attack on AES-128</h3>
-        <p>AES-128 built from scratch in C++, then broken with a correlation power-analysis attack that recovers the full key from 10,000 simulated traces via last-round byte-locality.</p>
-        <div class="pills"><span class="pill">C++ / Python</span><span class="pill">CPA</span><span class="pill">key-schedule inversion</span></div>
-      </article>
-
-      <article class="card small faint">
-        <div class="cat">ARCHITECTURE</div>
-        <h3>Architecture modeling suite</h3>
-        <p>Cycle-accurate C++ models: an OoO superscalar pipeline (IPC ~1&rarr;7.5), a GShare predictor at 6.37% mispredict on gcc, and an L1/L2/L3 cache hierarchy with prefetching.</p>
-        <div class="pills"><span class="pill">OoO superscalar</span><span class="pill">branch prediction</span><span class="pill">cache coherence</span></div>
-      </article>
-    </div>
+    <!-- Cards below are generated from the PROJECTS list in the script. Do not hand-edit here. -->
+    <div class="feat" id="featGrid"></div>
+    <div class="grid3" id="projGrid"></div>
 
     <a class="ghlink" href="https://github.com/spacebiz24" target="_blank" rel="noopener">
       <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1.5A10.5 10.5 0 0 0 8.7 22c.5.1.7-.2.7-.5v-1.8c-2.9.6-3.5-1.4-3.5-1.4-.5-1.2-1.2-1.5-1.2-1.5-.9-.6.1-.6.1-.6 1 .1 1.6 1 1.6 1 .9 1.6 2.5 1.1 3.1.9.1-.7.4-1.1.6-1.4-2.3-.3-4.7-1.2-4.7-5.1 0-1.1.4-2 1-2.8-.1-.3-.5-1.3.1-2.7 0 0 .9-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .6 1.4.2 2.4.1 2.7.6.8 1 1.7 1 2.8 0 3.9-2.4 4.8-4.7 5.1.4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5A10.5 10.5 0 0 0 12 1.5z"/></svg>
@@ -402,18 +357,8 @@
 <section id="experience">
   <div class="wrap">
     <div class="sec-head"><span class="sec-idx">02</span><h2>Experience</h2><span class="rule"></span></div>
-    <div class="tl">
-      <div class="tl-item">
-        <div class="tl-role">GPU Formal Verification Intern</div>
-        <div class="tl-meta"><span class="org">NVIDIA Corporation</span><span>Jan&ndash;Jul 2024</span><span>Bengaluru, India</span></div>
-        <p>Closed formal verification on PCIe Transaction- and Data-Link-Layer sub-units using SVA and Cadence JasperGold, reaching full property coverage for protocol compliance and corner cases. Triaged bugs with RTL designers to accelerate sign-off, and cut pre-submit FV runtime ~40% through property pruning and constraint refinement.</p>
-      </div>
-      <div class="tl-item">
-        <div class="tl-role">Project Engineering Intern</div>
-        <div class="tl-meta"><span class="org">DRDO &mdash; DEBEL</span><span>Jul 2024&ndash;Feb 2025</span><span>Bengaluru, India</span></div>
-        <p>Designed a ruggedized, military-grade PCB for a mass-produced temperature-sensing wearable under tight size, power, and survivability constraints. Wrote ATMega328P and sensor firmware libraries with optimized interrupt handling that improved system response time ~80%.</p>
-      </div>
-    </div>
+    <!-- Generated from the EXPERIENCE list in the script. -->
+    <div class="tl" id="tlList"></div>
   </div>
 </section>
 
@@ -421,26 +366,12 @@
 <section id="research">
   <div class="wrap">
     <div class="sec-head"><span class="sec-idx">03</span><h2>Research &amp; publications</h2><span class="rule"></span></div>
-
-    <div class="pub">
-      <span class="yr">2025</span>
-      <span><span class="pt">Wearable Temperature Detection System for Personalized Health Tracking</span><span class="pv">ICCCIT &mdash; Intl. Conf. on Computational, Communication and Information Technology</span></span>
-      <a class="read" href="https://doi.org/10.1109/ICCCIT62592.2025.10928049" target="_blank" rel="noopener">IEEE &rarr;</a>
-    </div>
-    <div class="pub">
-      <span class="yr">2022</span>
-      <span><span class="pt">A Novel Approach to Mitigate Microgravity-Induced Bone Loss</span><span class="pv">International Astronautical Congress (IAC)</span></span>
-      <a class="read" href="https://iafastro.directory/iac/archive/browse/IAC-22/A1/IP/70304/" target="_blank" rel="noopener">IAF &rarr;</a>
-    </div>
-    <div class="pub">
-      <span class="yr">2022</span>
-      <span><span class="pt">A Novel Degeneration and De-Orbiting Technique for Space Debris Removal</span><span class="pv">International Astronautical Congress (IAC)</span></span>
-      <a class="read" href="https://iafastro.directory/iac/archive/browse/IAC-22/A6/IP/70301/" target="_blank" rel="noopener">IAF &rarr;</a>
-    </div>
+    <!-- Generated from the PUBLICATIONS list in the script. -->
+    <div id="pubList"></div>
   </div>
 </section>
 
-<!-- SKILLS + EDUCATION -->
+<!-- SKILLS + EDUCATION (edit these two directly in the HTML — they change rarely) -->
 <section id="skills">
   <div class="wrap">
     <div class="sec-head"><span class="sec-idx">04</span><h2>Skills &amp; education</h2><span class="rule"></span></div>
@@ -513,6 +444,191 @@
 </footer>
 
 <script>
+/* ================================================================
+   CONTENT  —  EDIT HERE
+   ----------------------------------------------------------------
+   Every project, job, and paper on the page is built from the three
+   lists below. To change the page, edit these lists only — you never
+   touch the HTML markup or the CSS, so the design stays consistent.
+
+   HTML entities work inside any text field: &mdash; (—), &times; (×),
+   &rarr; (→), &amp; (&), &middot; (·), &ndash; (–).
+
+   ---- HOW TO ADD A PROJECT -------------------------------------
+   Copy one { ... } block inside PROJECTS, paste it in the position
+   you want, and fill in the fields:
+
+     title        card headline
+     category     small label above the title (shown in UPPERCASE)
+     color        accent bar + link color:
+                    "teal"  (default)  "violet"   "gold"   "faint"
+     featured     true  -> large card in the top row (keep to 2 for
+                           a balanced layout)
+                  false -> small card in the grid below
+     description  one or two sentences
+     tags         array of short spec chips (any number)
+     url          optional. A non-empty value adds a "Repository ->"
+                  link on the card. Use "" for no link.
+
+   Example to paste into PROJECTS:
+     {
+       title: "My New Accelerator",
+       category: "Architecture / RTL",
+       color: "teal",
+       featured: false,
+       description: "One line on what it does and the headline result.",
+       tags: ["SystemVerilog", "12 ns closure", "TSMC 65nm"],
+       url: "https://github.com/spacebiz24/my-new-accelerator"
+     },
+   ================================================================ */
+
+  var PROJECTS = [
+    {
+      title: "ButterFold &mdash; baseband transform engine",
+      category: "Silicon / Tape-out",
+      color: "teal",
+      featured: true,
+      description: "A minimum-area OFDM / DFT-s-OFDM transform core that folds a 12-point DFT and a 128-point FFT/IFFT onto one shared mixed-radix datapath. Hardened RTL-to-GDS on GlobalFoundries GF180MCU for the IEEE SSCS TC-OSE Chipathon (team D03).",
+      tags: ["GF180 180nm", "LibreLane / OpenROAD", "1.3 &times; 1.0 mm die", "LVS/XOR clean"],
+      url: ""
+    },
+    {
+      title: "Wayfinder &mdash; AHRS coprocessor",
+      category: "Silicon / Tape-out",
+      color: "violet",
+      featured: true,
+      description: "A CORDIC + Kalman attitude coprocessor for TinyTapeout: one shift-add iterator shared across circular/linear CORDIC and Kalman microcode, with no hardware multiplier or reciprocal ROM. Turns gyro/accel/mag streams into roll, pitch, and yaw.",
+      tags: ["IHP SG13G2 130nm", "Q1.15 fixed-point", "1&times;2 tile", "Python golden model"],
+      url: ""
+    },
+    {
+      title: "Pipelined CNN accelerator",
+      category: "Architecture / RTL",
+      color: "faint",
+      featured: false,
+      description: "A pipelined 4&times;4-kernel convolution engine in SystemVerilog over 1024&times;1024 inputs, timing-closed at a 7&nbsp;ns clock and sustaining one pixel per cycle.",
+      tags: ["SystemVerilog", "7 ns closure", "45nm &middot; 35k cells"],
+      url: ""
+    },
+    {
+      title: "I2C &rarr; Wishbone UVM env",
+      category: "Verification",
+      color: "violet",
+      featured: false,
+      description: "A layered UVM testbench &mdash; driver, monitor, scoreboard, and SVA checkers &mdash; covering every I2C transaction type and Wishbone bus operation with functional coverage.",
+      tags: ["UVM", "SVA", "functional coverage"],
+      url: ""
+    },
+    {
+      title: "DPA attack on AES-128",
+      category: "Hardware Security",
+      color: "gold",
+      featured: false,
+      description: "AES-128 built from scratch in C++, then broken with a correlation power-analysis attack that recovers the full key from 10,000 simulated traces via last-round byte-locality.",
+      tags: ["C++ / Python", "CPA", "key-schedule inversion"],
+      url: ""
+    },
+    {
+      title: "Architecture modeling suite",
+      category: "Architecture",
+      color: "faint",
+      featured: false,
+      description: "Cycle-accurate C++ models: an OoO superscalar pipeline (IPC ~1&rarr;7.5), a GShare predictor at 6.37% mispredict on gcc, and an L1/L2/L3 cache hierarchy with prefetching.",
+      tags: ["OoO superscalar", "branch prediction", "cache coherence"],
+      url: ""
+    }
+  ];
+
+  /* ---- EXPERIENCE ----------------------------------------------
+     Fields: role, org, dates, location, description.
+     Newest first (they render top to bottom).                     */
+  var EXPERIENCE = [
+    {
+      role: "GPU Formal Verification Intern",
+      org: "NVIDIA Corporation",
+      dates: "Jan&ndash;Jul 2024",
+      location: "Bengaluru, India",
+      description: "Closed formal verification on PCIe Transaction- and Data-Link-Layer sub-units using SVA and Cadence JasperGold, reaching full property coverage for protocol compliance and corner cases. Triaged bugs with RTL designers to accelerate sign-off, and cut pre-submit FV runtime ~40% through property pruning and constraint refinement."
+    },
+    {
+      role: "Project Engineering Intern",
+      org: "DRDO &mdash; DEBEL",
+      dates: "Jul 2024&ndash;Feb 2025",
+      location: "Bengaluru, India",
+      description: "Designed a ruggedized, military-grade PCB for a mass-produced temperature-sensing wearable under tight size, power, and survivability constraints. Wrote ATMega328P and sensor firmware libraries with optimized interrupt handling that improved system response time ~80%."
+    }
+  ];
+
+  /* ---- PUBLICATIONS --------------------------------------------
+     Fields: year, title, venue, link, linkLabel.
+     Set link to "" to show no link.                               */
+  var PUBLICATIONS = [
+    {
+      year: "2025",
+      title: "Wearable Temperature Detection System for Personalized Health Tracking",
+      venue: "ICCCIT &mdash; Intl. Conf. on Computational, Communication and Information Technology",
+      link: "https://doi.org/10.1109/ICCCIT62592.2025.10928049",
+      linkLabel: "IEEE"
+    },
+    {
+      year: "2022",
+      title: "A Novel Approach to Mitigate Microgravity-Induced Bone Loss",
+      venue: "International Astronautical Congress (IAC)",
+      link: "https://iafastro.directory/iac/archive/browse/IAC-22/A1/IP/70304/",
+      linkLabel: "IAF"
+    },
+    {
+      year: "2022",
+      title: "A Novel Degeneration and De-Orbiting Technique for Space Debris Removal",
+      venue: "International Astronautical Congress (IAC)",
+      link: "https://iafastro.directory/iac/archive/browse/IAC-22/A6/IP/70301/",
+      linkLabel: "IAF"
+    }
+  ];
+
+/* ================================================================
+   RENDERING  —  no need to edit below this line
+   ================================================================ */
+
+  function projectCard(p){
+    var cls = "card" + (p.featured ? "" : " small") + (p.color && p.color !== "teal" ? " " + p.color : "");
+    var tags = (p.tags || []).map(function(t){ return '<span class="pill">' + t + '</span>'; }).join("");
+    var link = p.url ? '<a class="card-link" href="' + p.url + '" target="_blank" rel="noopener">Repository &rarr;</a>' : "";
+    return '<article class="' + cls + '">'
+      + '<div class="cat">' + String(p.category || "").toUpperCase() + '</div>'
+      + '<h3>' + p.title + '</h3>'
+      + '<p>' + p.description + '</p>'
+      + '<div class="pills">' + tags + '</div>'
+      + link
+      + '</article>';
+  }
+
+  function expItem(e){
+    return '<div class="tl-item">'
+      + '<div class="tl-role">' + e.role + '</div>'
+      + '<div class="tl-meta"><span class="org">' + e.org + '</span><span>' + e.dates + '</span><span>' + e.location + '</span></div>'
+      + '<p>' + e.description + '</p>'
+      + '</div>';
+  }
+
+  function pubRow(p){
+    var link = p.link
+      ? '<a class="read" href="' + p.link + '" target="_blank" rel="noopener">' + (p.linkLabel || "Read") + ' &rarr;</a>'
+      : '<span></span>';
+    return '<div class="pub">'
+      + '<span class="yr">' + p.year + '</span>'
+      + '<span><span class="pt">' + p.title + '</span><span class="pv">' + p.venue + '</span></span>'
+      + link
+      + '</div>';
+  }
+
+  document.getElementById("featGrid").innerHTML =
+    PROJECTS.filter(function(p){ return p.featured; }).map(projectCard).join("");
+  document.getElementById("projGrid").innerHTML =
+    PROJECTS.filter(function(p){ return !p.featured; }).map(projectCard).join("");
+  document.getElementById("tlList").innerHTML = EXPERIENCE.map(expItem).join("");
+  document.getElementById("pubList").innerHTML = PUBLICATIONS.map(pubRow).join("");
+
   // theme toggle (per-viewer, best-effort persistence)
   (function(){
     var root=document.documentElement, key="siddhaanth-theme";
