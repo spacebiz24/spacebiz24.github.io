@@ -3,8 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMiAzMiI+PHJlY3QgeD0iMiIgeT0iMiIgd2lkdGg9IjI4IiBoZWlnaHQ9IjI4IiByeD0iNyIgZmlsbD0iIzBFMTIxQSIvPjxyZWN0IHg9IjkuNSIgeT0iOS41IiB3aWR0aD0iMTMiIGhlaWdodD0iMTMiIHJ4PSIzIiBmaWxsPSIjMzVEMEJBIi8+PGcgZmlsbD0iIzM1RDBCQSI+PHJlY3QgeD0iMTQuNSIgeT0iMiIgd2lkdGg9IjMiIGhlaWdodD0iMy41IiByeD0iMSIvPjxyZWN0IHg9IjE0LjUiIHk9IjI2LjUiIHdpZHRoPSIzIiBoZWlnaHQ9IjMuNSIgcng9IjEiLz48cmVjdCB4PSIyIiB5PSIxNC41IiB3aWR0aD0iMy41IiBoZWlnaHQ9IjMiIHJ4PSIxIi8+PHJlY3QgeD0iMjYuNSIgeT0iMTQuNSIgd2lkdGg9IjMuNSIgaGVpZ2h0PSIzIiByeD0iMSIvPjwvZz48L3N2Zz4K">
 <title>Siddhaanth Iyer &mdash; VLSI &amp; ASIC Engineer</title>
-<meta name="description" content="Siddhaanth Satish Iyer — MS CE at NC State. VLSI design &amp; verification: RTL to GDS, formal verification, and open-source silicon tape-outs.">
+<meta name="description" content="Siddhaanth Satish Iyer — MS EE at NC State. VLSI design &amp; verification: RTL to GDS, formal verification, and open-source silicon tape-outs.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -155,6 +156,11 @@
   .fp-route{fill:none;stroke:var(--teal);stroke-width:1.6;opacity:.75}
   .fp-via{fill:var(--gold)}
   .fp-cap{font-family:var(--font-mono);font-size:8px;fill:var(--text-faint);letter-spacing:.14em}
+  .fp-cell{stroke:var(--teal);stroke-width:.5;opacity:.3;fill:none}
+  .fp-bank{stroke:var(--violet);stroke-width:.6;opacity:.5}
+  .fp-bank-g{stroke:var(--gold)}
+  .fp-lbl{font-family:var(--font-mono);font-size:8px;fill:var(--text-faint);text-anchor:start;letter-spacing:.05em}
+  .fp-fid{stroke:var(--gold);stroke-width:1.3;opacity:.6;fill:none}
   .fp-trace{
     fill:none;stroke:var(--teal-bright);stroke-width:2;
     stroke-dasharray:340;stroke-dashoffset:340;
@@ -256,9 +262,10 @@
 
 <header class="nav">
   <div class="wrap nav-inner">
-    <a class="brand" href="#top"><span class="dot"></span><b>siddhaanth&#95;iyer</b></a>
+    <a class="brand" href="#top" aria-label="Home"><span class="dot"></span></a>
     <nav class="navlinks" id="menu">
-      <a href="#work">Work</a>
+      <a href="#work">VLSI</a>
+      <a href="#embedded">Embedded</a>
       <a href="#experience">Experience</a>
       <a href="#research">Research</a>
       <a href="#skills">Skills</a>
@@ -301,39 +308,62 @@
     </div>
 
     <!-- portfolio-as-floorplan -->
-    <svg class="floor" viewBox="0 0 400 356" role="img" aria-label="Chip floorplan diagram where each block is one project: FFT/DFT engine, CORDIC/Kalman coprocessor, UVM verification environment, and AES side-channel work.">
+        <svg class="floor" viewBox="0 0 400 356" role="img" aria-label="Abstract system-on-chip floorplan: a standard-cell core with SRAM, PLL, I/O, DSP, control and SERDES partitions connected by routing — a nod to RTL-to-GDS physical design.">
+      <defs>
+        <pattern id="cells" width="12" height="8" patternUnits="userSpaceOnUse">
+          <path class="fp-cell" d="M0 7.5 H12 M6 0 V8"/>
+        </pattern>
+      </defs>
+
       <rect class="fp-die" x="8" y="8" width="384" height="308" rx="8"/>
       <rect class="fp-pad" x="16" y="16" width="368" height="292" rx="5"/>
 
-      <!-- FFT / DFT : teal -->
-      <rect class="fp-blk fp-teal" x="42" y="44" width="146" height="98" rx="4"/>
-      <text class="fp-t" x="115" y="90">FFT / DFT</text>
-      <text class="fp-s" x="115" y="106">128-pt &middot; GF180</text>
+      <!-- alignment fiducials -->
+      <path class="fp-fid" d="M24 20 V28 M20 24 H28"/>
+      <path class="fp-fid" d="M376 20 V28 M372 24 H380"/>
+      <path class="fp-fid" d="M24 296 V304 M20 300 H28"/>
+      <path class="fp-fid" d="M376 296 V304 M372 300 H380"/>
 
-      <!-- CORDIC / KALMAN : violet -->
-      <rect class="fp-blk fp-violet" x="212" y="44" width="146" height="98" rx="4"/>
-      <text class="fp-t" x="285" y="90">CORDIC / KALMAN</text>
-      <text class="fp-s" x="285" y="106">AHRS &middot; IHP130</text>
+      <!-- partitions -->
+      <rect class="fp-blk fp-teal" x="30" y="32" width="184" height="138" rx="4"/>
+      <rect x="30" y="32" width="184" height="138" rx="4" fill="url(#cells)"/>
+      <text class="fp-lbl" x="37" y="162">CORE</text>
 
-      <!-- UVM : teal -->
-      <rect class="fp-blk fp-teal" x="42" y="176" width="146" height="98" rx="4"/>
-      <text class="fp-t" x="115" y="222">UVM / SVA</text>
-      <text class="fp-s" x="115" y="238">I2C &rarr; Wishbone</text>
+      <rect class="fp-blk fp-violet" x="238" y="32" width="132" height="62" rx="4"/>
+      <line class="fp-bank" x1="271" y1="34" x2="271" y2="92"/>
+      <line class="fp-bank" x1="304" y1="34" x2="304" y2="92"/>
+      <line class="fp-bank" x1="337" y1="34" x2="337" y2="92"/>
+      <text class="fp-lbl" x="244" y="88">SRAM</text>
 
-      <!-- AES : gold -->
-      <rect class="fp-blk fp-gold" x="212" y="176" width="146" height="98" rx="4"/>
-      <text class="fp-t" x="285" y="222">AES-128</text>
-      <text class="fp-s" x="285" y="238">power analysis</text>
+      <rect class="fp-blk fp-gold" x="238" y="106" width="60" height="62" rx="4"/>
+      <text class="fp-lbl" x="244" y="162">PLL</text>
 
-      <!-- static routing -->
-      <path class="fp-route" d="M188 118 H200 V159 H212"/>
-      <path class="fp-route" d="M188 200 H200 V159"/>
-      <circle class="fp-via" cx="200" cy="159" r="2.6"/>
-      <!-- animated trace: FFT out -> AES in -->
-      <path class="fp-trace" d="M115 142 V159 H285 V176"/>
+      <rect class="fp-blk fp-teal" x="310" y="106" width="60" height="62" rx="4"/>
+      <text class="fp-lbl" x="316" y="162">I/O</text>
 
-      <text class="fp-cap" x="16" y="332">FLOORPLAN // PORTFOLIO.GDS</text>
-      <text class="fp-cap" x="384" y="332" text-anchor="end">v2027</text>
+      <rect class="fp-blk fp-violet" x="30" y="182" width="108" height="104" rx="4"/>
+      <rect x="30" y="182" width="108" height="104" rx="4" fill="url(#cells)" opacity="0.6"/>
+      <text class="fp-lbl" x="37" y="278">DSP</text>
+
+      <rect class="fp-blk fp-teal" x="150" y="182" width="64" height="104" rx="4"/>
+      <text class="fp-lbl" x="156" y="278">CTRL</text>
+
+      <rect class="fp-blk fp-gold" x="238" y="182" width="132" height="104" rx="4"/>
+      <line class="fp-bank fp-bank-g" x1="238" y1="234" x2="370" y2="234"/>
+      <text class="fp-lbl" x="244" y="278">SERDES</text>
+
+      <!-- routing -->
+      <path class="fp-route" d="M214 90 H238"/>
+      <path class="fp-route" d="M226 60 V250"/>
+      <path class="fp-route" d="M30 176 H370"/>
+      <circle class="fp-via" cx="226" cy="90" r="2.4"/>
+      <circle class="fp-via" cx="226" cy="176" r="2.4"/>
+
+      <!-- animated critical path -->
+      <path class="fp-trace" d="M214 120 H226 V176 H320 V182"/>
+
+      <text class="fp-cap" x="16" y="332">// SoC FLOORPLAN</text>
+      <text class="fp-cap" x="384" y="332" text-anchor="end">rtl &rarr; gds</text>
     </svg>
   </div>
 </section>
@@ -341,7 +371,7 @@
 <!-- WORK -->
 <section id="work">
   <div class="wrap">
-    <div class="sec-head"><span class="sec-idx">01</span><h2>Selected work</h2><span class="rule"></span></div>
+    <div class="sec-head"><span class="sec-idx">01</span><h2>ASIC &amp; VLSI</h2><span class="rule"></span></div>
     <!-- Cards below are generated from the PROJECTS list in the script. Do not hand-edit here. -->
     <div class="feat" id="featGrid"></div>
     <div class="grid3" id="projGrid"></div>
@@ -353,10 +383,20 @@
   </div>
 </section>
 
+<!-- EMBEDDED & AEROSPACE -->
+<section id="embedded">
+  <div class="wrap">
+    <div class="sec-head"><span class="sec-idx">02</span><h2>Embedded &amp; aerospace</h2><span class="rule"></span></div>
+    <!-- Generated from the EMBEDDED list in the script. Same fields as PROJECTS. -->
+    <div class="feat" id="embFeatGrid"></div>
+    <div class="grid3" id="embProjGrid"></div>
+  </div>
+</section>
+
 <!-- EXPERIENCE -->
 <section id="experience">
   <div class="wrap">
-    <div class="sec-head"><span class="sec-idx">02</span><h2>Experience</h2><span class="rule"></span></div>
+    <div class="sec-head"><span class="sec-idx">03</span><h2>Experience</h2><span class="rule"></span></div>
     <!-- Generated from the EXPERIENCE list in the script. -->
     <div class="tl" id="tlList"></div>
   </div>
@@ -365,7 +405,7 @@
 <!-- RESEARCH -->
 <section id="research">
   <div class="wrap">
-    <div class="sec-head"><span class="sec-idx">03</span><h2>Research &amp; publications</h2><span class="rule"></span></div>
+    <div class="sec-head"><span class="sec-idx">04</span><h2>Research &amp; publications</h2><span class="rule"></span></div>
     <!-- Generated from the PUBLICATIONS list in the script. -->
     <div id="pubList"></div>
   </div>
@@ -374,7 +414,7 @@
 <!-- SKILLS + EDUCATION (edit these two directly in the HTML — they change rarely) -->
 <section id="skills">
   <div class="wrap">
-    <div class="sec-head"><span class="sec-idx">04</span><h2>Skills &amp; education</h2><span class="rule"></span></div>
+    <div class="sec-head"><span class="sec-idx">05</span><h2>Skills &amp; education</h2><span class="rule"></span></div>
     <div class="two">
       <div>
         <div class="skillgrp">
@@ -384,9 +424,15 @@
           </div>
         </div>
         <div class="skillgrp">
+          <h4>Embedded &amp; firmware</h4>
+          <div class="pills">
+            <span class="pill">STM32</span><span class="pill">ESP32</span><span class="pill">Arduino / Raspberry Pi</span><span class="pill">FreeRTOS</span><span class="pill">PlatformIO</span><span class="pill">SPI / I2C / UART</span><span class="pill">PCB design (KiCad)</span><span class="pill">Sensor fusion</span><span class="pill">Flight computers</span>
+          </div>
+        </div>
+        <div class="skillgrp">
           <h4>Languages</h4>
           <div class="pills">
-            <span class="pill">SystemVerilog</span><span class="pill">Verilog</span><span class="pill">C / C++</span><span class="pill">Python</span><span class="pill">TCL</span><span class="pill">Bash</span><span class="pill">x86 assembly</span>
+            <span class="pill">SystemVerilog</span><span class="pill">Verilog</span><span class="pill">C / C++</span><span class="pill">Python</span><span class="pill">TCL</span><span class="pill">Bash</span><span class="pill">ARM assembly</span><span class="pill">x86 assembly</span>
           </div>
         </div>
         <div class="skillgrp">
@@ -539,6 +585,48 @@
     }
   ];
 
+  /* ---- EMBEDDED & AEROSPACE ------------------------------------
+     Same fields as PROJECTS (title, category, color, featured,
+     description, tags, url). Rendered into the Embedded section.  */
+  var EMBEDDED = [
+    {
+      title: "Cooperative micro-drone swarm",
+      category: "Avionics / Swarm",
+      color: "teal",
+      featured: true,
+      description: "Led the design of a micro-drone swarm around a custom flight computer and firmware libraries built for reliable, predictable coordination, with FreeRTOS scheduling sensor fusion, telemetry, and motor control. Demonstrated tangent-bug swarming in simulation and in hardware &mdash; awarded the ECE department's best project of the year.",
+      tags: ["Custom flight computer", "FreeRTOS", "Sensor fusion", "Best Project Award"],
+      url: ""
+    },
+    {
+      title: "CANSAT flight computer",
+      category: "Flight computer",
+      color: "gold",
+      featured: true,
+      description: "Designed and built the flight computer and firmware for a CANSAT in the CANSAT India competition, plus a custom Yagi-Uda antenna and a telemetry-visualization GUI. Led the overall design and fabrication to a top-10 finish among 86 teams.",
+      tags: ["Flight computer", "Yagi-Uda antenna", "Telemetry GUI", "Top 10 / 86"],
+      url: ""
+    },
+    {
+      title: "Autonomous aircraft flight computer",
+      category: "Avionics",
+      color: "violet",
+      featured: false,
+      description: "Iterated and flight-tested flight-computer designs for an autonomous aircraft ahead of the SAE Aerodesign contest, leading the avionics and automation sub-team on autonomous navigation and payload delivery. Reached the final round of the 2023 Boeing National Aeromodelling competition.",
+      tags: ["Avionics", "Autonomous nav", "Payload delivery"],
+      url: ""
+    },
+    {
+      title: "Drone announcer module",
+      category: "Embedded / RF",
+      color: "faint",
+      featured: false,
+      description: "Built an add-on announcement module for quadcopters for crowd control and disaster relief with Garuda Aerospace, developing the electronics and firmware for long-range communication over cellular networks.",
+      tags: ["Embedded firmware", "Long-range comms", "Garuda Aerospace"],
+      url: ""
+    }
+  ];
+
   /* ---- EXPERIENCE ----------------------------------------------
      Fields: role, org, dates, location, description.
      Newest first (they render top to bottom).                     */
@@ -626,6 +714,10 @@
     PROJECTS.filter(function(p){ return p.featured; }).map(projectCard).join("");
   document.getElementById("projGrid").innerHTML =
     PROJECTS.filter(function(p){ return !p.featured; }).map(projectCard).join("");
+  document.getElementById("embFeatGrid").innerHTML =
+    EMBEDDED.filter(function(p){ return p.featured; }).map(projectCard).join("");
+  document.getElementById("embProjGrid").innerHTML =
+    EMBEDDED.filter(function(p){ return !p.featured; }).map(projectCard).join("");
   document.getElementById("tlList").innerHTML = EXPERIENCE.map(expItem).join("");
   document.getElementById("pubList").innerHTML = PUBLICATIONS.map(pubRow).join("");
 
